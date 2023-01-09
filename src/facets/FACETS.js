@@ -252,7 +252,7 @@ export default class FACETS extends React.Component {
                             }
                         >
                             <a
-                                href="#/facets/envision"
+                                href="#envision"
                                 onClick={this.set_active_component("envision")}
                             >
                                 <span>Envision</span>
@@ -265,7 +265,7 @@ export default class FACETS extends React.Component {
                             }
                         >
                             <a
-                                href="#/facets/data"
+                                href="#data"
                                 onClick={this.set_active_component("data")}
                             >
                                 <span>Data</span>
@@ -279,7 +279,7 @@ export default class FACETS extends React.Component {
                             }
                         >
                             <a
-                                href="#/facets/model"
+                                href="#model"
                                 onClick={this.set_active_component("model")}
                             >
                                 <span>Model</span>
@@ -293,7 +293,7 @@ export default class FACETS extends React.Component {
                             }
                         >
                             <a
-                                href="#/facets/deploy"
+                                href="#deploy"
                                 onClick={this.set_active_component("deploy")}
                             >
                                 <span>Deploy</span>
