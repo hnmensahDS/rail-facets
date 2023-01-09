@@ -1,0 +1,75 @@
+{
+    "name": "rail-facet-interface",
+    "version": "0.1.0",
+    "description": "Estimate the responsibility of your A.I. project in terms of fairness, accountability, confidentiality, ethics, transparency and safety.",
+    "private": true,
+    "keywords": [
+        "responsible_ai",
+        "ethical",
+        "responsible",
+        "artificial",
+        "intelligence"
+    ],
+    "license": "GPL-3.0",
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^6.2.1",
+        "@testing-library/jest-dom": "^5.16.5",
+        "@testing-library/react": "^13.4.0",
+        "@testing-library/user-event": "^14.4.3",
+        "bulma": "^0.9.4",
+        "bulma-tooltip": "^3.0.2",
+        "image-map-resizer": "^1.0.10",
+        "jspdf": "^2.5.1",
+        "jspdf-autotable": "^3.5.28",
+        "node-sass": "^8.0.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-image": "^4.0.3",
+        "react-router-dom": "^6.6.1",
+        "react-scripts": "5.0.1",
+        "web-vitals": "^2.1.4"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "prettier": "prettier --write \"**/*.{js,css,html,json}\" --ignore-path ./.prettierignore",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "**/*.{js,css,html,json}": [
+            "prettier --write --ignore-path ./.prettierignore",
+            "git add"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "gh-pages": "^4.0.0",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.1.0",
+        "prettier": "^2.8.1"
+    }
+}

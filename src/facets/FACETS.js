@@ -1,0 +1,448 @@
+import React from "react";
+import Score from "./Score";
+import Report from "./Report";
+import Badge from "./Badge";
+
+const DEFAULT_ANSWER = "idk";
+const NO_ANSWER = "idk";
+
+const ANSWER_KEY = {
+    yes: "Yes",
+    no: "No",
+    idk: "I don't know",
+};
+
+export default class FACETS extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            questions: [],
+            active_component:
+                window.location.hash.length > 7
+                    ? window.location.hash.substr(7)
+                    : "envision",
+        };
+    }
+
+    componentDidMount() {
+        this.setState({
+            questions: require("../rubric.json").questions.map(item => {
+                item.answer = DEFAULT_ANSWER;
+                return item;
+            }),
+        });
+    }
+
+    calculate_score(metric, component, questions = this.state.questions) {
+        let numerator = questions
+            .map(question => {
+                const answer_weight = question.answer === "yes";
+                const component_weight = component
+                    ? question.component === component
+                    : 1;
+                return (
+                    answer_weight *
+                    component_weight *
+                    // question.weight *
+                    (metric
+                        ? question[metric]
+                        : question.fairness +
+                        question.accountability +
+                        question.confidentiality +
+                        question.ethics +
+                        question.transparency +
+                        question.safety
+                    )
+                );
+            })
+            .reduce((accumulator, current) => accumulator + current, 0);
+        let denominator = questions
+            .map(question => {
+                const component_weight = component
+                    ? question.component === component
+                    : 1;
+                return Math.max(
+                    0, // question.weight *
+                    component_weight *
+                    (metric
+                        ? question[metric]
+                        : question.fairness +
+                        question.accountability +
+                        question.confidentiality +
+                        question.ethics +
+                        question.transparency +
+                        question.safety
+                    )
+                );
+            })
+            .reduce((accumulator, current) => accumulator + current, 0);
+        return Math.max(0, Math.round(100 * (numerator / denominator)));
+    }
+
+    load_scoreboard() {
+        return (
+            <div>
+                {this.load_facets_score()}
+                {this.load_metric_scoreboard()}
+                {this.load_component_scoreboard()}
+            </div>
+        );
+    }
+
+    load_facets_score() {
+        const facets_score = this.calculate_score();
+        return (
+            <nav className="level">
+                <div className="level-item has-text-centered">
+                    <div>
+                        <p className="title">F.A.C.E.T.S. Score</p>
+                    </div>
+                </div>
+                <div className="level-item is-hidden-mobile"></div>
+                <div className="level-item is-hidden-mobile"></div>
+                <div className="level-item is-hidden-mobile"></div>
+                <div className="level-item is-hidden-mobile"></div>
+                <div className="level-item is-hidden-mobile"></div>
+                <Score score_value={facets_score} />
+                <div className="level-item is-hidden-mobile"></div>
+                <div className="level-item is-hidden-mobile"></div>
+                <div className="level-item is-hidden-mobile"></div>
+                <div className="level-item is-hidden-mobile"></div>
+                <div className="level-item">
+                    <nav className="level is-mobile margin-0">
+                        <Report
+                            answer_key={ANSWER_KEY}
+                            calculate_score={this.calculate_score}
+                            questions={this.state.questions}
+                            no_answer={NO_ANSWER}
+                        />
+                        <Badge score={facets_score} />
+                    </nav>
+                </div>
+            </nav>
+        );
+    }
+
+    load_component_scoreboard() {
+        return (
+            <nav className="level is-mobile">
+                <Score
+                    label="Envision"
+                    score_value={this.calculate_score(null, "envision")}
+                />
+                <Score
+                    label="Data"
+                    score_value={this.calculate_score(null, "data")}
+                />
+                <Score
+                    label="Model"
+                    score_value={this.calculate_score(null, "model")}
+                />
+                <Score
+                    label="Deploy"
+                    score_value={this.calculate_score(null, "deploy")}
+                />
+            </nav>
+        );
+    }
+
+    load_metric_scoreboard(component) {
+        return (
+            <nav className="level">
+                <div className="level-item margin-0">
+                    <nav className="level is-mobile margin-1">
+                        <Score
+                            label="Fairness"
+                            score_value={this.calculate_score(
+                                "fairness",
+                                component
+                            )}
+                        />
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <Score
+                            label="Accountability"
+                            score_value={this.calculate_score(
+                                "accountability",
+                                component
+                            )}
+                        />
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                    </nav>
+                </div>
+                <div className="level-item margin-0">
+                    <nav className="level is-mobile margin-1">
+                        <Score
+                            label="Confidentiality"
+                            score_value={this.calculate_score(
+                                "confidentiality",
+                                component
+                            )}
+                        />
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <Score
+                            label="Ethics"
+                            score_value={this.calculate_score(
+                                "ethics",
+                                component
+                            )}
+                        />
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <Score
+                            label="Transparency"
+                            score_value={this.calculate_score(
+                                "transparency",
+                                component
+                            )}
+                        />
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <div className="level-item is-hidden-mobile"></div>
+                        <Score
+                            label="Safety"
+                            score_value={this.calculate_score(
+                                "safety",
+                                component
+                            )}
+                        />
+                    </nav>
+                </div>
+            </nav>
+        );
+    }
+
+    set_active_component(component_name) {
+        return () => {
+            this.setState({ active_component: component_name });
+        };
+    }
+
+    load_tabs() {
+        return (
+            <section className="section">
+                <div className="tabs is-centered is-boxed is-medium">
+                    <ul>
+                        <li
+                            className={
+                                this.state.active_component === "envision"
+                                    ? "is-active"
+                                    : ""
+                            }
+                        >
+                            <a
+                                href="#/facets/envision"
+                                onClick={this.set_active_component("envision")}
+                            >
+                                <span>Envision</span>
+                            </a>
+                        </li><li
+                            className={
+                                this.state.active_component === "data"
+                                    ? "is-active"
+                                    : ""
+                            }
+                        >
+                            <a
+                                href="#/facets/data"
+                                onClick={this.set_active_component("data")}
+                            >
+                                <span>Data</span>
+                            </a>
+                        </li>
+                        <li
+                            className={
+                                this.state.active_component === "model"
+                                    ? "is-active"
+                                    : ""
+                            }
+                        >
+                            <a
+                                href="#/facets/model"
+                                onClick={this.set_active_component("model")}
+                            >
+                                <span>Model</span>
+                            </a>
+                        </li>
+                        <li
+                            className={
+                                this.state.active_component === "deploy"
+                                    ? "is-active"
+                                    : ""
+                            }
+                        >
+                            <a
+                                href="#/facets/deploy"
+                                onClick={this.set_active_component("deploy")}
+                            >
+                                <span>Deploy</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        );
+    }
+
+    change_answer(index) {
+        return event => {
+            let updated_questions = this.state.questions;
+            updated_questions[index].answer = event.target.value;
+            this.setState({
+                questions: updated_questions,
+            });
+        };
+    }
+
+    load_question(item, index) {
+        return (
+            <div
+                className={
+                    "field is-horizontal" +
+                    (item.component === this.state.active_component
+                        ? ""
+                        : " is-hidden")
+                }
+            >
+                <div className="field-label is-size-4">{item.question}</div>
+                <div className="field-body has-text-centered">
+                    <div className="select">
+                        <select
+                            value={item.answer}
+                            onChange={this.change_answer(index)}
+                        >
+                            {Object.entries(ANSWER_KEY).map(
+                                ([answer_key, answer_value]) => {
+                                    return (
+                                        <option
+                                            value={answer_key}
+                                            key={answer_key}
+                                        >
+                                            {answer_value}
+                                        </option>
+                                    );
+                                }
+                            )}
+                        </select>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+    load_questions() {
+        return this.state.questions.map((item, index) => {
+            return <div key={index}>{this.load_question(item, index)}</div>;
+        });
+    }
+
+    no_active_component() {
+        return (
+            <div className="has-text-centered">
+                Calculate your F.A.C.E.T.S score by answering a set of simple
+                Yes/No questions. Select any tab to get started.
+            </div>
+        );
+    }
+
+    answer_summary(component) {
+        return (
+            <div className="field is-horizontal is-size-4">
+                <div className="field-label horizontal-mobile"># Answered</div>
+                <div className="field-body horizontal-mobile has-text-right">
+                    {
+                        this.state.questions.filter(
+                            question =>
+                                question.component === component &&
+                                question.answer !== NO_ANSWER
+                        ).length
+                    }
+                    /
+                    {
+                        this.state.questions.filter(
+                            question => question.component === component
+                        ).length
+                    }
+                </div>
+            </div>
+        );
+    }
+
+    render() {
+        return (
+            <div>
+                <section className="hero">
+                    <div className="hero-body">
+                        <div className="container">
+                            <nav className="level">
+                                <div className="level-item">
+                                    <div>
+                                        <h1 className="title">
+                                            Calculate F.A.C.E.T.S Score
+                                        </h1>
+                                        <br />
+                                        <h1 className="subtitle">
+                                            Your scores reflect fairness,
+                                            accountability, confidentiality, ethics,
+                                            transparency and safety in your A.I. project.
+                                        </h1>
+                                    </div>
+                                </div>
+                                <div className="level-item">
+                                    <nav className="level is-mobile margin-0">
+                                        <Score
+                                            label="legend"
+                                            score_value=">70"
+                                        />
+                                        <Score
+                                            label="legend"
+                                            score_value="30-70"
+                                        />
+                                        <Score
+                                            label="legend"
+                                            score_value="<30"
+                                        />
+                                    </nav>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </section>
+                <div className="container">
+                    {this.load_scoreboard()}
+                    {this.load_tabs()}
+                    {this.state.active_component
+                        ? this.load_metric_scoreboard(
+                            this.state.active_component
+                        )
+                        : null}
+                    {this.answer_summary(this.state.active_component)}
+                    {this.state.active_component
+                        ? this.load_questions()
+                        : this.no_active_component()}
+                </div>
+            </div>
+        );
+    }
+}
