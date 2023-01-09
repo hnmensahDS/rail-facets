@@ -6,10 +6,10 @@ export default class Footer extends React.Component {
             <footer className="footer">
                 <div className="content has-text-centered">
                     <p>
-                        <strong>Responsible A.I.</strong> by{" "}
+                        <strong>FACETS Responsible AI</strong> by{" "}
                         <a rel="noreferrer" target="_blank" href="https://rail.knust.edu.gh/">RAIL</a> under
                         the{" "}
-                        <a rel="noreferrer" target="_blank" href="https://github.com/musahibrahimali/rail-facet-interface/blob/master/LICENCE">
+                        <a rel="noreferrer" target="_blank" href="https://github.com/hnmensahDS/rail-facets/blob/master/LICENCE">
                             MIT license
                         </a>
                         .
