@@ -95,7 +95,7 @@ export default class FACETS extends React.Component {
             <nav className="level">
                 <div className="level-item has-text-centered">
                     <div>
-                        <p className="title">F.A.C.E.T.S. Score</p>
+                        <p className="title">FACETS Score</p>
                     </div>
                 </div>
                 <div className="level-item is-hidden-mobile"></div>
@@ -360,7 +360,7 @@ export default class FACETS extends React.Component {
     no_active_component() {
         return (
             <div className="has-text-centered">
-                Calculate your F.A.C.E.T.S score by answering a set of simple
+                Calculate your FACETS score by answering a set of simple
                 Yes/No questions. Select any tab to get started.
             </div>
         );
@@ -399,13 +399,13 @@ export default class FACETS extends React.Component {
                                 <div className="level-item">
                                     <div>
                                         <h1 className="title">
-                                            Calculate F.A.C.E.T.S Score
+                                            Calculate the FACETS Score
                                         </h1>
                                         <br />
                                         <h1 className="subtitle">
-                                            Your scores reflect fairness,
-                                            accountability, confidentiality, ethics,
-                                            transparency and safety in your A.I. project.
+                                            Your scores reflect <strong>F</strong>airness, 
+                                            <strong> A</strong>ccountability, <strong>C</strong>onfidentiality, <strong>E</strong>thics,
+                                            <strong> T</strong>ransparency and <strong>S</strong>afety in your AI project.
                                         </h1>
                                     </div>
                                 </div>
