@@ -25,14 +25,6 @@ export default class Glossary extends React.Component {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>COCO</td>
-                                <td>
-                                    <a href="http://cocodataset.org/">
-                                        Common Objects in Context
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
                                 <td>Fairness</td>
                                 <td>
                                     Decisions are unbiased to identity features
@@ -60,6 +52,16 @@ export default class Glossary extends React.Component {
                                     misuse.
                                 </td>
                             </tr>
+
+                            <tr>
+                                <td>Ethics</td>
+                                <td>
+                                    Decisions should follow sound thical considerations and not 
+                                    infringe on the fundamental human tights and wellbeing
+                                    of people. It should also not harm the environment 
+                                    while it is being used or under development in any way.
+                                </td>
+                            </tr>
                             <tr>
                                 <td>Transparency</td>
                                 <td>
@@ -68,6 +70,17 @@ export default class Glossary extends React.Component {
                                     process. Accompanying decisions with
                                     explanations and analysis reports help
                                     understand the outcome.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Safety</td>
+                                <td>
+                                AI systems should be robust, secure and safe 
+                                throughout their entire lifecycle so that they 
+                                function appropriately in conditions of normal 
+                                use, foreseeable use or misuse, or other adverse 
+                                conditions and do not pose an unreasonable safety risk.
+
                                 </td>
                             </tr>
                             <tr>
