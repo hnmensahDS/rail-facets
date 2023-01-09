@@ -30,7 +30,7 @@ export default class Need extends React.Component {
                         className="button is-primary is-outlined is-large is-fullwidth"
                         to="/facets"
                     >
-                        Calculate F.A.C.E.T.S Score
+                        Calculate the FACETS Score
                     </Link>
                 </section>
                 <section className="hero">
@@ -45,12 +45,17 @@ export default class Need extends React.Component {
                 <div className="container">
                     <p>
                         Artificial Intelligence or AI encompasses a wide range
-                        of fields and methods. Formulating a consistent
-                        definition for AI remains evasive yet we attempt to
-                        draw a framework to measure ethical practices. In order
-                        to cast a wide net across the range of AI topics and
-                        remain tangible in practical solutions, we rely on high
-                        level abstractions of the involved components.
+                        of fields and methods. To ensure that AI solutions are delivered 
+                        with integrity, equity, respecting individuals, and 
+                        always being mindful of the social impact of what we do: 
+                        There is a need to evaluate the AI solutions according to 
+                        established standards (<strong>ISO 26000</strong>) and frameworks (e.g.,
+                         <strong> FACETS</strong>, etc.). 
+
+                    </p>
+                    <p>
+                    These considerations encourage the building of AI systems 
+                    that are <strong>Responsible</strong> and <strong>Trustworthy</strong>. 
                     </p>
                     <img
                         className="components-image"
@@ -66,31 +71,31 @@ export default class Need extends React.Component {
                             shape="rect"
                             coords="100, 70, 458, 430"
                             alt="Envision"
-                            href="facets#/facets/envision"
+                            href="facets/#envision"
                         /><area
                             shape="rect"                           
                             coords="565, 70, 923, 430"
                             alt="Data"
-                            href="facets#/facets/data"
+                            href="facts/#data"
                         />
                         <area
                             shape="rect"                           
                             coords="1030, 70, 1388, 430"
                             alt="Model"
-                            href="facets#/facets/model"
+                            href="facets/#model"
                         />
                         <area
                             shape="rect"
                             coords="1600, 70, 1853, 430"
                             alt="Deploy"
-                            href="facets#/facets/deploy"
+                            href="facets/#deploy"
                         />
                     </map>
                     <p>
                         Any system can be modelled using input-process-output
                         with reasonable encapsulation of the concepts.
-                        Similarly, an A.I. system can be represented using a
-                        data-model-deploy pipeline.
+                        Similarly, an AI system can be represented using an 
+                        <strong> envision-data-model-deploy</strong> pipeline.
                     </p>
                 </div>
             </div>
