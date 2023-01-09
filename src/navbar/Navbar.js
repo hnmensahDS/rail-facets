@@ -72,7 +72,7 @@ export default class Navbar extends React.Component {
                                     to="/facets"
                                     onClick={this.toggle_side_menu}
                                 >
-                                    Calculate F.A.C.E.T.S Score
+                                    Calculate the FACETS Score
                                 </Link>
                                 <Link
                                     className="navbar-item"
