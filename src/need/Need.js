@@ -44,17 +44,17 @@ export default class Need extends React.Component {
                 </section>
                 <div className="container">
                     <p>
-                        Artificial Intelligence or A.I. encompasses a wide range
+                        Artificial Intelligence or AI encompasses a wide range
                         of fields and methods. Formulating a consistent
                         definition for AI remains evasive yet we attempt to
                         draw a framework to measure ethical practices. In order
-                        to cast a wide net across the range of A.I. topics and
+                        to cast a wide net across the range of AI topics and
                         remain tangible in practical solutions, we rely on high
                         level abstractions of the involved components.
                     </p>
                     <img
                         className="components-image"
-                        alt="Components of an A.I. project - Data, Model and Deploy"
+                        alt="Components of an AI project - Envision, Data, Model and Deploy"
                         src="components.png"
                         useMap="#component-image-map"
                     />
