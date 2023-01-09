@@ -2,7 +2,7 @@
   "questions": [
     {
       "component": "envision",
-      "question": "Have you considered the system purpose, including critical objectives and intended uses or applications",
+      "question": "Have you considered the system purpose, including critical objectives and intended uses or applications?",
       "weight": 2,
       "fairness": 0,
       "accountability": 2,
@@ -13,7 +13,7 @@
     },
     {
       "component": "envision",
-      "question": "Do you think the use of AI is in line with your organization's/ community values?",
+      "question": "Do you think the use of AI is in line with your organization’s/community's values?",
       "weight": 1,
       "fairness": 0,
       "accountability": 1,
@@ -46,7 +46,7 @@
     },
     {
       "component": "envision",
-      "question": "Have you envisioned stakeholders, including demographic groups (i.e., race, gender, ae, disability status, skin tone, etc.) that will directly or indirectly affect the system and the expected benefits and consequences?",
+      "question": "Have you envisioned stakeholders, including demographic groups (i.e., race, gender, age, disability status, skin tone, etc.), that will directly or indirectly affect the system and the expected benefits and consequences?",
       "weight": 4,
       "fairness": 4,
       "accountability": 4,
@@ -149,9 +149,9 @@
       "weight": 2,
       "fairness": 0,
       "accountability": 2,
-      "confidentiality": 0,
+      "confidentiality": -1,
       "ethics": 0,
-      "transparency": 0,
+      "transparency": 2,
       "safety": 0
     },
     {
@@ -189,18 +189,29 @@
     },
     {
       "component": "data",
-      "question": "Is the dataset self-contained, or does it lin to or otherwise rely on external resources (e.g., websites, tweets, other datasets)?",
-      "weight": 2,
+      "question": "Is the dataset self-contained?",
+      "weight": 1,
       "fairness": 0,
       "accountability": 0,
-      "confidentiality": 2,
+      "confidentiality": 1,
       "ethics": 0,
       "transparency": 0,
       "safety": 0
     },
     {
       "component": "data",
-      "question": "Is the data anonymized?",
+      "question": "Does the data link to or otherwise rely on external resources (e.g., websites, tweets, other datasets)?",
+      "weight": 1,
+      "fairness": 0,
+      "accountability": 0,
+      "confidentiality": 0,
+      "ethics": 0,
+      "transparency": 1,
+      "safety": 0
+    },
+    {
+      "component": "data",
+      "question": "Is the data anonymised?",
       "weight": 2,
       "fairness": 0,
       "accountability": 0,
@@ -251,7 +262,7 @@
       "confidentiality": 0,
       "ethics": 2,
       "transparency": 0,
-      "safety": 0
+      "safety": 1
     },
     {
       "component": "model",
@@ -335,15 +346,15 @@
       "question": "Are the results of the hyperparameter tuning reported?",
       "weight": 2,
       "fairness": 2,
-      "accountability": 0,
+      "accountability": 2,
       "confidentiality": 0,
       "ethics": 0,
       "transparency": 2,
-      "safety": 0
+      "safety": 1
     },
     {
       "component": "model",
-      "question": "Does the model allow use of Explainable A.I. (XAI) methods?",
+      "question": "Does the model allow use of Explainable AI (XAI) methods?",
       "weight": 1,
       "fairness": 0,
       "accountability": 1,
@@ -354,7 +365,7 @@
     },
     {
       "component": "model",
-      "question": "Does the model employ Explainable A.I. (XAI) methods?",
+      "question": "Does the model employ Explainable AI (XAI) methods?",
       "weight": 2,
       "fairness": 0,
       "accountability": 0,
@@ -368,9 +379,9 @@
       "question": "Does the model use an active learning framework?",
       "weight": 2,
       "fairness": 2,
-      "accountability": 0,
+      "accountability": 1,
       "confidentiality": 0,
-      "ethics": 0,
+      "ethics": 1,
       "transparency": 0,
       "safety": 2
     },
@@ -387,7 +398,7 @@
     },
     {
       "component": "deploy",
-      "question": "Is the Lab capable of reliably deploying AI solutions or applications at scale?",
+      "question": "Is the AI Lab/Organisation capable of reliably deploying AI solutions or applications at scale?",
       "weight": 1,
       "fairness": 0,
       "accountability": 0,
@@ -402,7 +413,7 @@
       "weight": 3,
       "fairness": 0,
       "accountability": 3,
-      "confidentiality": -3,
+      "confidentiality": -2,
       "ethics": 3,
       "transparency": 0,
       "safety": 3
@@ -519,7 +530,7 @@
     },
     {
       "component": "deploy",
-      "question": "For Explainable A.I. (XAI) methods, is the explanation for the prediction shared in a decision report?",
+      "question": "For Explainable AI (XAI) methods, is the explanation for the prediction shared in a decision report?",
       "weight": 1,
       "fairness": 0,
       "accountability": 0,
