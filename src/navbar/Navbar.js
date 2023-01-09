@@ -56,7 +56,7 @@ export default class Navbar extends React.Component {
                                 className="navbar-link"
                                 onClick={this.toggle_side_menu}
                             >
-                                FACETS Responsible A.I. Framework
+                                FACETS Responsible AI Framework
                             </span>
 
                             <div className="navbar-dropdown">
@@ -65,7 +65,7 @@ export default class Navbar extends React.Component {
                                     to="/"
                                     onClick={this.toggle_side_menu}
                                 >
-                                    The Need for Responsible A.I.
+                                    The Need for Responsible AI
                                 </Link>
                                 <Link
                                     className="navbar-item"
