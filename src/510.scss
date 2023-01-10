@@ -2,14 +2,14 @@
 
 @import "../node_modules/bulma/sass/utilities/initial-variables.sass";
 
-$primary: #4c8294;
+$primary: #00d553;
 $danger: #de656b;
 $warning: #ffc000;
 $success: #92d050;
-$light-grey: #f2f2f2;
+$white: #ffffff;
 
-$background: $light-grey;
-$scheme-main: $light-grey;
-$scheme-main-bis: $light-grey;
+$background: $white;
+$scheme-main: $white;
+$scheme-main-bis: $white;
 
 @import "../node_modules/bulma/bulma.sass";
