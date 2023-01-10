@@ -119,39 +119,37 @@ export default class Need extends React.Component {
                     />
 
                         <map name="sponsors-image-map">
-                        <area
-                            shape="rect"
-                            coords="100, 70, 458, 430"
-                            alt="AI4D Africa"
-                            href="https://africa.ai4d.ai/"
-                            target="_blank"
-                        /><area
-                            shape="rect"                           
-                            coords="565, 70, 820, 430"
-                            alt="IDRC"
-                            href="https://idrc.ca/en"
-                            target="_blank"
+                        <area 
+                        target="_blank" 
+                        alt="AI4D Africa" 
+                        title="AI4D Africa" 
+                        href="https://africa.ai4d.ai/" 
+                        coords="1087,596,48,38" 
+                        shape="rect"
                         />
-                        <area
-                            shape="rect"                           
-                            coords="860, 70, 1188, 430"
-                            alt="SIDA"
-                            href="https://www.sida.se/en"
-                            target="_blank"
+                        <area 
+                        target="_blank" 
+                        alt="IDRC" 
+                        title="IDRC" 
+                        href="https://idrc.ca/en" 
+                        coords="1177,38,2167,596" 
+                        shape="rect"
                         />
-                        <area
-                            shape="rect"
-                            coords="1250, 70, 1853, 430"
-                            alt="GIZ"
-                            href="https://www.giz.de/en/html/index.html"
-                            target="_blank"
+                        <area 
+                        target="_blank" 
+                        alt="SIDA" 
+                        title="SIDA" 
+                        href="https://www.sida.se/en" 
+                        coords="2255,38,3244,602" 
+                        shape="rect"
                         />
-                        <area
-                            shape="rect"
-                            coords="2500, 70, 1853, 430"
-                            alt="Fair Forward"
-                            href="https://www.giz.de/expertise/html/61982.html"
-                            target="_blank"
+                        <area 
+                        target="_blank" 
+                        alt="GIZ" 
+                        title="GIZ" 
+                        href="https://www.giz.de/en/html/index.html" 
+                        coords="3313,38,4378,602" 
+                        shape="rect"
                         />
                     </map>
                     
