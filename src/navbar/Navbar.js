@@ -25,7 +25,7 @@ export default class Navbar extends React.Component {
                 <div className="navbar-brand">
                     <a className="navbar-item" rel="noreferrer" target="_blank" href="https://rail.knust.edu.gh/">
                         <img
-                            src="icon-512.png"
+                            src="rail-logo.png"
                             alt="www.rail.knust.edu.gh"
                         />
                     </a>
