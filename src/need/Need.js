@@ -70,24 +70,24 @@ export default class Need extends React.Component {
                     <map name="component-image-map">
                         <area
                             shape="rect"
-                            coords="100, 70, 458, 430"
+                            coords="50, 70, 200, 430"
                             alt="Envision"
                             href="facets/#envision"
                         /><area
                             shape="rect"                           
-                            coords="565, 70, 923, 430"
+                            coords="260, 70, 425, 430"
                             alt="Data"
                             href="facts/#data"
                         />
                         <area
                             shape="rect"                           
-                            coords="1030, 70, 1388, 430"
+                            coords="480, 70, 650, 430"
                             alt="Model"
                             href="facets/#model"
                         />
                         <area
                             shape="rect"
-                            coords="1600, 70, 1853, 430"
+                            coords="700, 70, 850, 430"
                             alt="Deploy"
                             href="facets/#deploy"
                         />
