@@ -72,24 +72,24 @@ export default class Need extends React.Component {
                             shape="rect"
                             coords="50, 70, 200, 430"
                             alt="Envision"
-                            href="facets/#envision"
+                            href="/facets/#envision"
                         /><area
                             shape="rect"                           
                             coords="260, 70, 425, 430"
                             alt="Data"
-                            href="facts/#data"
+                            href="/facts/#data"
                         />
                         <area
                             shape="rect"                           
                             coords="480, 70, 650, 430"
                             alt="Model"
-                            href="facets/#model"
+                            href="/facets/#model"
                         />
                         <area
                             shape="rect"
                             coords="700, 70, 850, 430"
                             alt="Deploy"
-                            href="facets/#deploy"
+                            href="/facets/#deploy"
                         />
                     </map>
                     <p>
