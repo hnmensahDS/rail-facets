@@ -94,7 +94,7 @@ export default class Report extends React.Component {
                             <div className="control">
                                 <textarea
                                     className="textarea has-fixed-size"
-                                    placeholder="e.g. GLT is a Ghanaian translation application that translates Sante Twi, Akwapem Twi, Ewe, and Hausa."
+                                    placeholder="e.g. GLT is a Ghanaian translation application that translates Asante Twi, Akwapem Twi, Ewe, and Hausa."
                                     value={this.state.project_comments}
                                     onChange={this.update_input_value(
                                         "project_comments"
